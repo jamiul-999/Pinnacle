@@ -1,5 +1,6 @@
 from django.db.models import Count
 from django.shortcuts import get_object_or_404
+from rest_framework import action
 from rest_framework import generics
 from rest_framework import viewsets
 from rest_framework.authentication import BasicAuthentication
@@ -15,6 +16,16 @@ class CourseViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = CourseSerializer
     pagination_class = StandardPagination
 
+    @action(
+        detail=True,
+        methods=["post"],
+        authentication_classes=[BasicAuthentication]
+        permission_classes=[IsAuthenticated]
+    )
+    def enroll(self, request, *args, **kwargs):
+        course = self.get_object()
+        course.students.add(request.user)
+        return Response({"enrolled": True})
 # class SubjectListView(generics.ListAPIView):
 #     queryset = Subject.objects.annotate(total_courses=Count("courses"))
 #     serializer_class = SubjectSerializer
