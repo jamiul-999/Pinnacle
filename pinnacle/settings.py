@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # local
     "courses.apps.CoursesConfig",
     "students.apps.StudentsConfig",
+    "chat.apps.ChatConfig",
     # 3rd party
     "embed_video",
     "debug_toolbar",
@@ -149,3 +150,9 @@ INTERNAL_IPS = [
 CACHE_MIDDLEWARE_ALIAS = "default"
 CACHE_MIDDLEWARE_SECONDS = 60 * 15 # 15 minutes
 CACHE_MIDDLEWARE_KEY_PREFIX = "pinnacle"
+
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
+    ]
+}
