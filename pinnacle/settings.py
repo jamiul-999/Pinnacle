@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "daphne",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
     "debug_toolbar",
     "redisboard",
     "rest_framework",
+    
 ]
 
 MIDDLEWARE = [
@@ -82,6 +84,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "pinnacle.wsgi.application"
 
+ASGI_APPLICATION = "pinnacle.asgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
