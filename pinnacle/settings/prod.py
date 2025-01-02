@@ -7,7 +7,7 @@ ADMINS = [
     ("JHD", "jhdhj999@gmail.com"),
 ]
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["pinnacle.com", "www.pinnacle.com"]
 
 DATABASES = {
     "default": {
