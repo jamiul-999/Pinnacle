@@ -33,17 +33,15 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "daphne",
+    "courses.apps.CoursesConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # local
-    "courses.apps.CoursesConfig",
     "students.apps.StudentsConfig",
     "chat.apps.ChatConfig",
-    # 3rd party
     "embed_video",
     "debug_toolbar",
     "redisboard",
